@@ -1,0 +1,173 @@
+:root {
+    --primary-color: #999;
+    --primary-dark: #777;
+    --background-color: #111;
+    --text-color: #eee;
+    --heading-color: #ddd;
+    --menu-background: rgba(34, 34, 34, 0.7);
+    --menu-text-color: #eee;
+    --menu-active-background: rgba(51, 51, 51, 0.7);
+    --form-background: rgba(51, 51, 51, 0.7);
+    --form-border: #555;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    /* Updated background to include a truck image */
+    background-image: url('truck_background.jpg'); /* Make sure this image exists in your project! */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--form-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+h1, h2 {
+    text-align: center;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+}
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Navigation Styles */
+nav {
+    background-color: var(--menu-background);
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+nav ul li a {
+    color: var(--menu-text-color);
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+nav ul li a:hover {
+    background-color: var(--primary-dark);
+}
+nav ul li a.active {
+    background-color: var(--menu-active-background);
+}
+
+/* Page Content Styles */
+.section {
+    padding: 20px 0;
+    text-align: center;
+}
+.section h2 {
+    margin-bottom: 20px;
+}
+#booking-form {
+    margin-bottom: 20px;
+    text-align: left;
+}
+#booking-form div {
+    margin-bottom: 15px;
+}
+#booking-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #eee;
+}
+#booking-form input[type="text"],
+#booking-form input[type="date"],
+#booking-form select,
+#booking-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--form-border);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #444;
+    color: #eee;
+}
+#booking-form textarea {
+    resize: vertical;
+    height: 80px;
+}
+#booking-form select {
+    height: 38px;
+}
+#booking-form button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+#booking-form button:hover {
+    background-color: var(--primary-dark);
+}
+#error-message {
+    color: red;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #ffe0e0;
+    border: 1px solid #ffb3b3;
+    border-radius: 5px;
+    display: none;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    nav ul li {
+        flex: none;
+        width: 100%;
+    }
+    nav ul li a {
+        padding: 10px 15px;
+    }
+    #booking-form input[type="text"],
+    #booking-form input[type="date"],
+    #booking-form select,
+    #booking-form textarea {
+        font-size: 0.9em;
+    }
+    #booking-form button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
